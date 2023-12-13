@@ -1,0 +1,126 @@
+Exploring mapped_veh_id...
+count    1.767927e+07
+mean     1.508423e+02
+std      2.694316e+01
+min      1.020000e+02
+25%      1.290000e+02
+50%      1.510000e+02
+75%      1.740000e+02
+max      1.970000e+02
+Name: mapped_veh_id, dtype: float64
+
+Exploring RS_E_InAirTemp_PC1...
+count    1.767927e+07
+mean     3.051742e+02
+std      3.280040e+02
+min      2.731500e+02
+25%      2.991500e+02
+50%      3.081500e+02
+75%      3.131500e+02
+max      6.580815e+04
+Name: RS_E_InAirTemp_PC1, dtype: float64
+
+Exploring RS_E_InAirTemp_PC2...
+count    1.766655e+07
+mean     3.054841e+02
+std      3.479992e+02
+min      2.731500e+02
+25%      2.991500e+02
+50%      3.081500e+02
+75%      3.131500e+02
+max      6.580815e+04
+Name: RS_E_InAirTemp_PC2, dtype: float64
+
+Exploring RS_E_OilPress_PC1...
+count    1.767927e+07
+mean     2.636115e+02
+std      1.152382e+02
+min      0.000000e+00
+25%      2.030000e+02
+50%      2.410000e+02
+75%      3.200000e+02
+max      6.900000e+02
+Name: RS_E_OilPress_PC1, dtype: float64
+
+Exploring RS_E_OilPress_PC2...
+count    1.766655e+07
+mean     2.706874e+02
+std      1.161168e+02
+min      0.000000e+00
+25%      2.100000e+02
+50%      2.510000e+02
+75%      3.340000e+02
+max      6.900000e+02
+Name: RS_E_OilPress_PC2, dtype: float64
+
+Exploring RS_E_RPM_PC1...
+count    1.767927e+07
+mean     9.122489e+02
+std      3.833051e+02
+min      0.000000e+00
+25%      7.980000e+02
+50%      8.010000e+02
+75%      8.140000e+02
+max      2.309000e+03
+Name: RS_E_RPM_PC1, dtype: float64
+
+Exploring RS_E_RPM_PC2...
+count    1.766655e+07
+mean     9.079636e+02
+std      3.884709e+02
+min      0.000000e+00
+25%      7.970000e+02
+50%      8.010000e+02
+75%      8.130000e+02
+max      9.732000e+03
+Name: RS_E_RPM_PC2, dtype: float64
+
+Exploring RS_E_WatTemp_PC1...
+count    1.767927e+07
+mean     3.500817e+02
+std      1.365462e+01
+min      2.581500e+02
+25%      3.511500e+02
+50%      3.541500e+02
+75%      3.581500e+02
+max      3.821500e+02
+Name: RS_E_WatTemp_PC1, dtype: float64
+
+Exploring RS_E_WatTemp_PC2...
+count    1.766655e+07
+mean     3.492923e+02
+std      1.452870e+01
+min      2.561500e+02
+25%      3.501500e+02
+50%      3.541500e+02
+75%      3.581500e+02
+max      3.921500e+02
+Name: RS_E_WatTemp_PC2, dtype: float64
+
+Exploring RS_T_OilTemp_PC1...
+count    1.767927e+07
+mean     3.496969e+02
+std      1.450369e+01
+min      1.451500e+02
+25%      3.491500e+02
+50%      3.541500e+02
+75%      3.581500e+02
+max      4.001500e+02
+Name: RS_T_OilTemp_PC1, dtype: float64
+
+Exploring RS_T_OilTemp_PC2...
+count    1.766655e+07
+mean     3.493118e+02
+std      1.535040e+01
+min      2.731500e+02
+25%      3.491500e+02
+50%      3.541500e+02
+75%      3.591500e+02
+max      3.901500e+02
+Name: RS_T_OilTemp_PC2, dtype: float64
+
+
+
+Number of sensor1 outliers: 39946
+Number of sensor2 outliers: 48751
+Number of engine outliers: 113728
