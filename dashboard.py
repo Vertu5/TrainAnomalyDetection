@@ -7,6 +7,12 @@ import plotly.express as px
 df = pd.read_csv('ar41_for_ulb_mini.csv', delimiter=';')
 df_anomalies = pd.read_csv('anomaly.csv', delimiter=';')
 
+# Identifier les trains ayant des anomalies
+trains_with_anomalies = df_anomalies['mapped_veh_id'].unique()
+
+# Filtrer les données pour les trains ayant des anomalies
+df_filtered = df[df['mapped_veh_id'].isin(trains_with_anomalies)]
+
 # Créer une application Dash
 app = dash.Dash(__name__)
 
@@ -17,15 +23,16 @@ app.layout = html.Div([
     )
 ])
 
-# Callback pour afficher la carte avec les points normaux en bleu et les anomalies en rouge
+# Callback pour afficher la carte avec les anomalies en rouge et les points normaux (pour les trains avec anomalies)
 @app.callback(
     dash.dependencies.Output('map-graph', 'figure'),
     [dash.dependencies.Input('map-graph', 'id')]
 )
 def update_map(_):
-    # Créer une carte avec Plotly Express pour les données normales (en bleu)
+
+        # Ajouter les points normaux pour les trains avec anomalies (en bleu)
     fig = px.scatter_mapbox(
-        df[~df.index.isin(df_anomalies.index)],  # Filtrer les données normales
+        df_filtered,
         lat='lat',
         lon='lon',
         hover_data=['timestamps_UTC', 'RS_E_InAirTemp_PC1', 'RS_E_InAirTemp_PC2', 'RS_E_OilPress_PC1', 'RS_E_OilPress_PC2', 'RS_E_RPM_PC1', 'RS_E_RPM_PC2', 'RS_E_WatTemp_PC1', 'RS_E_WatTemp_PC2', 'RS_T_OilTemp_PC1', 'RS_T_OilTemp_PC2'],
@@ -33,8 +40,8 @@ def update_map(_):
         color_discrete_sequence=['blue']  # Définir la couleur des points normaux en bleu
     )
 
-    # Ajouter les anomalies (en rouge)
-    fig.add_trace(px.scatter_mapbox(
+        # Créer une carte avec Plotly Express pour les anomalies (en rouge)
+    fig.add_trace( px.scatter_mapbox(
         df_anomalies,
         lat='lat',
         lon='lon',
@@ -42,6 +49,7 @@ def update_map(_):
         zoom=8,
         color_discrete_sequence=['red']  # Définir la couleur des anomalies en rouge
     ).data[0])
+
 
     fig.update_layout(
         mapbox_style="carto-positron",
